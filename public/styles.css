@@ -1,0 +1,787 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-background: #F0F0F7;
+  --color-primary-lighter: #9871F5;
+  --color-primary-light: #916BEA;
+  --color-primary: #8257E5;
+  --color-primary-dark: #774DD6;
+  --color-primary-darker: #6842c2;
+  --color-secondary: #04D361;
+  --color-secondary-dark: #04BF58;
+  --color-title-in-primary: #FFFFFF;
+  --color-text-in-primary: #D4C2FF;
+  --color-text-title: #32264D;
+  --color-text-complement: #9C98A6;
+  --color-text-base: #6A6180;
+  --color-line-in-white: #E6E6F0;
+  --color-input-background: #F8F8FC;
+  --color-button-text: #FFFFFF;
+  --color-box-base: #FFFFFF;
+  --color-box-footer: #FAFAFC;
+  --color-small-info: #C1BCCC;
+  font-size: 60%; 
+}
+
+body {
+ background: var(--color-background);
+ -webkit-font-smoothing: antialiased;
+}
+
+body, input, button, textarea {
+ font-weight: 500;
+ font-family: 'Poppins', sans-serif;
+ font-size: 1.6rem;
+ color: var(--color-text-base);
+}
+
+button {
+ cursor: pointer;
+}
+
+p {
+ color: var(--color-text-in-primary);
+}
+
+/*landing page*/
+#page-landing{
+  background-color: var(--color-primary);
+  max-width: 1920px;
+}
+
+#container{
+  display: grid;
+  width: 80vw;
+  height: 100vh;
+  margin: auto;
+  padding: 4em 0;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: 
+  "proffy image image" 
+  "button button text";
+  justify-content: center;
+  align-items: center;
+  grid-gap: 40px;
+}
+
+#titulo{
+  grid-area: proffy;
+}
+
+#titulo p{
+ font-size: 3rem;
+ width: 75%;
+ margin-top: 0.5em;
+ line-height: 4rem;
+}
+
+#landing-img{
+ grid-area: image;
+ display: flex;
+ align-items: center;
+ object-fit: cover;
+ justify-content: center;
+}
+
+#buttons-main{
+  grid-area: button;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#estudar img, #aulas img{
+  padding-right: 1.2em;
+}
+
+#estudar, #aulas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 2.2rem;
+  width: 50%;
+  height: 5em;
+  padding: 1em;
+  text-align: center; 
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease-out;
+  letter-spacing: 1.5px;
+}
+
+#estudar{
+  background-color: var(--color-primary-lighter);
+  margin-right: 1.2em;
+}
+
+#aulas{
+  background-color: var(--color-secondary);
+}
+
+#estudar:hover{
+  background-color: var(--color-primary-light);
+}
+
+#aulas:hover{
+  background-color: var(--color-secondary-dark);
+}
+
+#total-connections{
+  grid-area: text; 
+  justify-self: self-end; 
+}
+
+/*study page*/
+/*header*/
+
+#page-study, #give-classes{
+  max-width: 100vw;
+  height: 100vh;
+}
+
+.header-container{
+  background-color: var(--color-primary);
+  color: var(--color-title-in-primary);
+  display: flex;
+  flex-direction: column;
+  height: 16.9em;
+  }
+
+#navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#navbar a{
+  padding: 0 1em;
+  transition: opacity 0.2;
+}
+
+#navbar a:hover{
+  opacity: 0.6;
+}
+
+#back-logo{
+  height: 2em;
+}
+
+#logo{
+  height: 1.5em;
+}
+
+.header-content {
+  width: 50%;
+  margin: 2rem auto;  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1 1 20%;
+}
+
+.header-content h1 {
+  width: 100%;
+  font: 700 3.6rem Archivo;
+  line-height: 4.2rem;
+  text-align: left;
+  padding-right: 30%;
+}
+
+#search-teachers{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  flex: 1 1 20%;
+}
+
+#select-block, #input-block{
+  margin: 2rem 0 0 0;
+}
+
+#select-block:first-child{
+  margin-left: 0rem;
+}
+
+#select-block label, #input-block label, #textarea-block, .schedule-item{
+  font-size: 1.4rem;
+  color: var(--color-input-background);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1 1 20%;
+}
+
+#select-block select, #input-block input, #textarea-block textarea, .schedule-item input{
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 0.8rem;
+  background-color: var(--color-input-background);
+  border-radius: 0.8rem;
+  border: 1px solid var(--color-line-in-white);
+  outline: 0;
+  font: 1.5rem Archivo;
+  cursor: pointer;
+}
+
+#search-teachers button{
+  width: 12%;
+  margin:2.9em 0em 0em 0rem;
+  background-color: var(--color-secondary);
+  color: var(--color-button-text);
+  padding: 1.8rem 1.8rem;
+  border: 0;
+  border-radius: 0.8rem;
+  font: 700 1.6rem Archivo;
+  text-decoration: none;
+  transition: background 0.2s;  
+}
+
+#search-teachers button:hover, #teacher-item footer button:hover, #give-classes footer button:hover{
+  background-color: var(--color-secondary-dark); 
+}
+
+#input-block{
+  position: relative;
+}
+
+#input-block:focus-within::after{
+  content: "";
+  width: calc(100% - 3.2rem);
+  background-color: var(--color-primary-light);
+  height: 2px;
+  position: absolute;
+  left: 1.6rem;
+  right: 1.5rem;
+  bottom: 0em;
+
+}
+
+/*main*/
+#teacher-item{
+  width: 50%;
+  margin: 7rem auto 2em auto; 
+  background-color: var(--color-box-base);
+  border: 1px solid var(--color-line-in-white);
+  border-radius: 0.8rem;
+}
+
+#teacher-header{
+  display: flex;
+  align-items: center;
+  color: var(--color-text-title);
+  padding: 2em 0em 0em 2em;
+}
+
+#teacher-description p{
+  color: var(--color-text-base);
+  margin-top: 1.5em;
+  padding: 0em 3em 2em 2em;
+  font-weight: 600;
+  padding-bottom: 1.5em;
+}
+
+#teacher-header strong{
+  font: 700 2.4rem Archivo;
+}
+
+#teacher-header img{
+  border-radius: 50%;
+  height: 5em;
+  object-fit: cover;
+  object-position: top;
+  margin-right: 1.6em;
+}
+
+#teacher-item footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex: 1 1 20%;
+  border: 1px solid var(--color-line-in-white);
+  padding: 2em;
+}
+
+#teacher-item footer strong{
+  font: 700 2.2rem Archivo;
+  color: var(--color-primary-darker);
+  padding-left: 0.5em;
+}
+
+#teacher-item footer p{
+  color: var(--color-text-base);
+}
+
+#teacher-item footer button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  color: var(--color-button-text);
+  padding: 1.8rem 2.4rem;
+  border: 0;
+  border-radius: 0.8rem;
+  font: 700 1.6rem Archivo;
+  text-decoration: none;
+  transition: background 0.2s;  
+}
+
+#teacher-item footer button img {
+  padding-right: 1rem; 
+}
+
+/*give classes*/
+.header-content p{
+  max-width: 30rem;
+  margin-top: 2.4rem;
+  line-height: 2.6rem; 
+}
+
+#give-classes .header-container {
+  height: 20em;
+}
+
+#create-class, #give-classes footer{
+  width: 50%;
+  margin: -4rem auto 2em auto; 
+  background-color: var(--color-box-base);
+  border: 1px solid var(--color-line-in-white);
+  border-radius: 0.8rem;
+}
+
+#create-class label{
+  color: var(--color-text-base);
+  display: inline-block;
+}
+
+#create-class legend{
+  color: var(--color-text-title);
+  padding-top: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 1em;
+  font: 600 2.2rem Archivo;
+  width: 100%;
+  border-bottom: 1px solid var(--color-line-in-white) 
+}
+
+#create-class small{
+  color: var(--color-small-info);
+}
+
+#create-class fieldset{
+  padding: 1.5em 3em 1.5em 3em;
+  border: none;
+}
+
+#create-class fieldset:last-child{
+  margin-bottom: 1.5em;
+}
+
+#create-class #input-block{
+  margin-bottom: 1em;
+}
+
+#create-class input[type], #create-class select, #create-class textarea{
+  background-color: var(--color-background);
+}
+
+#textarea-block{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#textarea-block label{
+  margin-top: 1rem;
+}
+
+#textarea-block textarea{
+  height: 10em;
+}
+
+#add-time{
+  float: right;
+  border-style: none;
+  background: transparent;
+  font: 600 1.8rem Archivo;
+  color: var(--color-primary);
+  padding: 0;
+}
+
+#add-time:hover{
+  color: var(--color-primary-darker);
+}
+
+.schedule-item{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+#create-class #select-block:first-of-type, #create-class #input-block:first-of-type{
+ margin-top: 0;
+}
+
+#give-classes footer{
+  display: flex;
+  padding: 3em;  
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+}
+
+#give-classes footer p{
+  display: flex;
+  font-size: 1.4rem;
+  color: var(--color-small-info);
+}
+
+#give-classes footer img{
+  padding-right: 1.6rem;
+}
+
+#give-classes footer button{
+  background-color: var(--color-secondary);
+  color: var(--color-button-text);
+  padding: 1.8rem 2.4rem;
+  border: 0;
+  border-radius: 0.8rem;
+  font: 700 1.6rem Archivo;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+
+@media (max-width: 1300px){
+
+  #titulo p{
+    font-size: 2.2rem;
+  }
+
+  #landing-img img{
+   height: 20em;
+  }
+
+  #titulo img {
+    height: 5em;
+  }
+
+  #container{
+    grid-gap: 100px;
+  }
+
+  #total-connections{
+    width: 80%; 
+    justify-self: center;
+  }
+
+  #buttons-main, #total-connections{
+    align-self: flex-start;
+  }
+
+  .header-content, #teacher-item, #create-class, #give-classes footer {
+    width: 60%;
+  }  
+}
+
+@media (max-width: 1100px){
+
+  #container{
+    gap: 30px;
+  }
+
+  #landing-img img{
+   max-height: 17em;
+  }
+
+  #titulo img{
+    max-height: 7em;
+  }
+
+  #buttons-main{
+    max-height: 4em;
+    padding-bottom: 3.5em;
+    padding-top: 3.5em;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  #estudar, #aulas{
+    font-size: 2.2rem;   
+    width: 50%;
+    height: 5em;
+    padding: 1em;
+    text-align: center; 
+    color: #fff;
+  }
+
+  #estudar img, #aulas img {
+    padding-right: 0.5em;
+  }
+
+  #total-connections{
+    width: 90%; 
+    padding-top: 2.7em;
+    justify-self: center;
+  }
+
+  .header-content, #teacher-item, #create-class, #give-classes footer {
+    width: 65%;
+  }  
+
+  .header-content h1{
+    padding-right: 20%;
+  }
+}
+
+@media (max-width: 900px){
+
+    #container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 80vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    #titulo p{
+      width: 100%;
+      margin-bottom: 2em;
+    }
+
+    #titulo img {
+      height: 4em;
+    }
+
+    #landing-img img {
+      height: 15em;
+    }
+
+    #buttons-main {
+      justify-content: center;
+      margin-top: 2em;
+      margin-bottom: 2em;  
+    }
+
+    #aulas, #estudar{
+      height: 4em;
+      padding: 0.5em;
+    }
+
+    #total-connections{
+      align-self: center;
+      padding: 0;
+    }
+
+    /*page-study TABLET*/
+    .header-content, #teacher-item, #create-class, #give-classes footer {
+      width: 70%;
+    }  
+
+    #teacher-item{
+      margin-top: 10em;
+    }
+
+    .header-content h1{
+      padding: 0;
+    }
+
+    #search-teachers button{
+      display: flex;
+      flex-basis: 100%;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      margin: 1em auto;
+    }
+
+    .schedule-item {
+      align-items: stretch;
+      flex-wrap: nowrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      "weekday weekday"
+      "time-from time-to";
+    }
+
+    .schedule-item #select-block{
+      grid-area: weekday;
+    }
+
+    .schedule-item #time-from{
+      grid-area: time-from;
+      margin-left: 0.5em;
+    }
+
+    .schedule-item #time-to{
+      grid-area: time-to;
+      margin-left: 0.5em;
+    }
+    
+
+    .schedule-item .input-block {
+      margin-top: 1em;
+  }
+}
+
+@media (max-width: 720px){
+
+  .header-container{
+    height: 100vh;
+    display: block;
+  }
+
+  .header-content,#create-class, #give-classes footer{
+    width: 80%;
+  }
+
+  #navbar{
+    width: 85%;
+  }
+
+  #navbar a{
+    padding-left: 0;
+  }
+  
+  #search-teachers{
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 1.5em;
+  }
+
+  #search-teachers button{
+    width: 100%;
+    margin-top: 4rem;
+  }
+
+  #teacher-item{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 80%;
+  }
+
+  #teacher-item footer button{
+    width: 45%;
+  }
+
+  #create-class fieldset {
+    padding: 1.5em 2em 1.5em 2em;
+  }
+
+  #give-classes footer{
+    padding: 2em;
+  }
+}
+
+@media (max-width: 550px){
+
+    #container{
+      width: 90%;
+    }
+    
+    #titulo, #titulo p {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 0;
+    }
+    
+    #landing-img img{
+      width: 90%;
+      margin-bottom: 2em;
+    }
+
+    #buttons-main{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 3.5em;
+      padding-top: 0;
+    }
+
+    #estudar, #aulas{
+      margin-right: 0;
+      width: 80%;
+      height: 3em;
+    }
+
+    #estudar{
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+
+    #total-connections{
+      margin-top: 1em;
+    }
+
+    .header-content, #teacher-item, #create-class, #give-classes footer{
+      width: 85%;
+    }
+
+    #teacher-description p{
+      padding: 0.75em 2em 2em 2em;
+    }
+
+    .header-content h1{
+      font-size: 2.8rem;
+    }
+
+    #teacher-item footer{
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #teacher-item footer p{
+      margin-bottom: 1em;
+    }
+
+    #teacher-item footer button{
+      width: 100%;
+    }
+
+    #give-classes footer{
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1.5em;
+    }
+
+    #give-classes footer p{
+      align-items: center;
+      padding-bottom: 2em;
+    }
+
+    #create-class fieldset{
+      padding: 1.5em;
+    }    
+  
+  }
+
